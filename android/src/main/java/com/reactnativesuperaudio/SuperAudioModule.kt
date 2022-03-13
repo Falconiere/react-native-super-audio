@@ -20,5 +20,8 @@ class SuperAudioModule(reactContext: ReactApplicationContext) : ReactContextBase
     
     }
 
-    
+    // @ReactMethod(isBlockingSynchronousMethod = true)
+    // public String playSound(String u) {
+    //   return u;
+    // }
 }

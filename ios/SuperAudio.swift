@@ -1,8 +1,15 @@
+import Foundation
 @objc(SuperAudio)
 class SuperAudio: NSObject {
-
-    @objc(multiply:withB:withResolver:withRejecter:)
-    func multiply(a: Float, b: Float, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-        resolve(a*b)
+  
+    @objc
+    func playSound(_ url: String)-> String{
+        print("url is \(url)")
+        return url
+    }
+ 
+    @objc
+    static func requiresMainQueueSetup() -> Bool {
+        return true
     }
 }

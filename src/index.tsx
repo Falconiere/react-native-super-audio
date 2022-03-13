@@ -17,6 +17,6 @@ const SuperAudio = NativeModules.SuperAudio
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return SuperAudio.multiply(a, b);
+export function playSound(url: string): string {
+  return SuperAudio.playSound(url);
 }
