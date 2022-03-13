@@ -1,18 +1,20 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Button } from 'react-native';
 import { multiply } from 'react-native-super-audio';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  const [result, setResult] = React.useState<number>(1);
 
   return (
     <View style={styles.container}>
       <Text>Result: {result}</Text>
+      <Button
+        title="Multiply"
+        onPress={() => {
+          multiply(result, 2).then(setResult);
+        }}
+      />
     </View>
   );
 }
