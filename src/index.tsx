@@ -17,6 +17,28 @@ const SuperAudio = NativeModules.SuperAudio
       }
     );
 
-export function playSound(url: string): string {
-  return SuperAudio.playSound(url);
+export function setTracks(tracks: string[]): void {
+  SuperAudio.setTracks(tracks);
+}
+
+export function getTracks(): Promise<string[]> {
+  return SuperAudio.getTracks();
+}
+
+export function play(): void {
+  SuperAudio.play();
+}
+
+export function pause(): void {
+  SuperAudio.pause();
+}
+
+export function position(): number {
+  return SuperAudio.position();
+}
+
+export function onDuration(callback: (duration: number) => void): void {
+  SuperAudio.onDuration((duration: number) => {
+    callback(duration);
+  });
 }
